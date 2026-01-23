@@ -30,10 +30,9 @@ claude
 ## 폴더 구조
 
 ```
-Hao-Day/
-├── Hao-Day-Workspace/    # 이 레포 (통합 설정)
-│   ├── CLAUDE.md
-│   └── .claude/commands/
+Hao-Day-Workspace/        # 이 레포 (Root)
+├── CLAUDE.md             # 통합 컨텍스트
+├── .claude/commands/     # 공통 commands
 ├── Hao-Day-Backend/      # Java/Spring 백엔드
 ├── Hao-Day-Infra/        # Docker/Nginx 인프라
 └── Hao-Day-App/          # Flutter 앱

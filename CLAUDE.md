@@ -14,9 +14,9 @@
 
 | 레포 | 경로 | 기술 스택 | 설명 |
 |------|------|-----------|------|
-| **Backend** | `../Hao-Day-Backend` | Java 17, Spring Boot 3.2.2, MySQL 8, Redis 7 | REST API 서버 |
-| **Infra** | `../Hao-Day-Infra` | Docker, Nginx, GitHub Actions | 인프라 설정 |
-| **App** | `../Hao-Day-App` | Flutter 3.38, Dart 3.10, Provider | 모바일 앱 |
+| **Backend** | `./Hao-Day-Backend` | Java 17, Spring Boot 3.2.2, MySQL 8, Redis 7 | REST API 서버 |
+| **Infra** | `./Hao-Day-Infra` | Docker, Nginx, GitHub Actions | 인프라 설정 |
+| **App** | `./Hao-Day-App` | Flutter 3.38, Dart 3.10, Provider | 모바일 앱 |
 
 ---
 
@@ -26,14 +26,14 @@ Claude에게 다음 용어로 레포를 지정할 수 있습니다:
 
 | 용어 | 대상 레포 | 경로 |
 |------|-----------|------|
-| 앱, 프론트, 클라이언트, Flutter, Dart, 모바일 | Hao-Day-App | `../Hao-Day-App` |
-| 백엔드, 서버, API, Spring, Java, 백 | Hao-Day-Backend | `../Hao-Day-Backend` |
-| 인프라, 배포, Docker, Nginx, 서버설정 | Hao-Day-Infra | `../Hao-Day-Infra` |
+| 앱, 프론트, 클라이언트, Flutter, Dart, 모바일 | Hao-Day-App | `./Hao-Day-App` |
+| 백엔드, 서버, API, Spring, Java, 백 | Hao-Day-Backend | `./Hao-Day-Backend` |
+| 인프라, 배포, Docker, Nginx, 서버설정 | Hao-Day-Infra | `./Hao-Day-Infra` |
 
 ### 예시
-- "앱에서 로그인 화면 수정해줘" → `../Hao-Day-App/` 작업
-- "백엔드 User API 추가해줘" → `../Hao-Day-Backend/` 작업
-- "인프라 포트 변경해줘" → `../Hao-Day-Infra/` 작업
+- "앱에서 로그인 화면 수정해줘" → `./Hao-Day-App/` 작업
+- "백엔드 User API 추가해줘" → `./Hao-Day-Backend/` 작업
+- "인프라 포트 변경해줘" → `./Hao-Day-Infra/` 작업
 - "API 응답 필드 추가하고 앱에서도 반영해줘" → 크로스 레포 작업
 
 ---
@@ -114,7 +114,7 @@ GitHub Push → GitHub Actions → Local Registry (107) → Watchtower
 
 ## 레포별 특화 Commands
 
-### Backend (`../Hao-Day-Backend/`)
+### Backend (`./Hao-Day-Backend/`)
 | Command | 설명 |
 |---------|------|
 | `/check-architecture` | Java 멀티모듈 아키텍처 검증 |
@@ -123,12 +123,12 @@ GitHub Push → GitHub Actions → Local Registry (107) → Watchtower
 | `/run-test` | Gradle 테스트 실행 |
 | `/create-migration {설명}` | Flyway 마이그레이션 생성 |
 
-### Infra (`../Hao-Day-Infra/`)
+### Infra (`./Hao-Day-Infra/`)
 | Command | 설명 |
 |---------|------|
 | `/test-nginx` | Nginx 설정 테스트 |
 
-### App (`../Hao-Day-App/`)
+### App (`./Hao-Day-App/`)
 | Command | 설명 |
 |---------|------|
 | `/check-architecture` | Flutter 아키텍처 검증 |
@@ -142,8 +142,8 @@ GitHub Push → GitHub Actions → Local Registry (107) → Watchtower
 
 ### API 변경 예시
 
-1. Backend에서 API 수정 (`../Hao-Day-Backend/`)
-2. App에서 model 클래스 업데이트 (`../Hao-Day-App/`)
+1. Backend에서 API 수정 (`./Hao-Day-Backend/`)
+2. App에서 model 클래스 업데이트 (`./Hao-Day-App/`)
 3. 각 레포에서 커밋 & PR
 
 ### 환경변수 변경 예시
@@ -170,7 +170,7 @@ GitHub Push → GitHub Actions → Local Registry (107) → Watchtower
 
 ### 1. 통합 모드 (이 폴더에서)
 ```bash
-cd /Users/popo/Hao-Day/Hao-Day-Workspace
+cd /Users/popo/Hao-Day-Workspace
 claude
 
 # 모든 레포 접근 가능
@@ -179,7 +179,7 @@ claude
 
 ### 2. 개별 모드 (각 레포에서)
 ```bash
-cd /Users/popo/Hao-Day/Hao-Day-Backend
+cd /Users/popo/Hao-Day-Workspace/Hao-Day-Backend
 claude
 # Backend 특화 commands만 사용
 ```
@@ -188,9 +188,9 @@ claude
 
 ## 각 레포 상세 문서
 
-- [Backend CLAUDE.md](../Hao-Day-Backend/CLAUDE.md) - 멀티모듈 아키텍처, 패턴
-- [Infra CLAUDE.md](../Hao-Day-Infra/CLAUDE.md) - 서버 구성, 배포 흐름
-- [App CLAUDE.md](../Hao-Day-App/CLAUDE.md) - Flutter 아키텍처, 화면 구성
+- [Backend CLAUDE.md](./Hao-Day-Backend/CLAUDE.md) - 멀티모듈 아키텍처, 패턴
+- [Infra CLAUDE.md](./Hao-Day-Infra/CLAUDE.md) - 서버 구성, 배포 흐름
+- [App CLAUDE.md](./Hao-Day-App/CLAUDE.md) - Flutter 아키텍처, 화면 구성
 
 ---
 
