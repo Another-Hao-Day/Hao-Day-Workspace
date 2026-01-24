@@ -226,12 +226,22 @@ claude
 - 이 Workspace 레포는 설정 파일만 포함합니다
 - 코드 변경은 각 레포에서 개별 커밋 & PR합니다
 
-### 브랜치 전략
-| 레포 | 기본 브랜치 | PR 대상 |
-|------|-------------|---------|
-| Backend | develop | develop → main |
-| Infra | main | main |
-| App | main | main |
+### ⚠️ 브랜치 규칙 (필수 - 모든 레포 공통!)
+
+> **기본 브랜치(main/develop)에 직접 push 금지!**
+> 코드 변경이 있다면 무조건 새 브랜치를 생성하고 PR을 통해 머지해야 합니다.
+
+| 레포 | 기본 브랜치 | 워크플로우 |
+|------|-------------|------------|
+| Backend | develop | feature → PR → develop → PR → main |
+| App | develop | feature → PR → develop → PR → main |
+| Infra | main | feature → PR → main |
+| Workspace | main | feature → PR → main |
+
+### Claude 작업 시 주의사항
+- ❌ `git push origin main` 직접 금지
+- ❌ `git push origin develop` 직접 금지
+- ✅ 항상 feature 브랜치 생성 후 PR로 머지 요청
 
 ### 민감 정보
 - `.env` 파일은 각 레포의 `.gitignore`에 포함
