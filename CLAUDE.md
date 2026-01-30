@@ -77,13 +77,16 @@ Claude에게 다음 용어로 레포를 지정할 수 있습니다:
    API 클라이언트         SSL/TLS                  데이터베이스
 ```
 
+### 호스트 PC
+Intel N100 (4코어), 16GB RAM, 477GB Disk, Oracle VirtualBox
+
 ### 서버 구성
-| IP | 역할 |
-|------|--------|
-| 192.168.219.104 | Storage Server (RustFS) |
-| 192.168.219.105 | Development Server |
-| 192.168.219.106 | Production Server |
-| 192.168.219.107 | Nginx Proxy / Local Registry |
+| IP | 역할 | vCPU | RAM | Disk |
+|------|--------|------|-----|------|
+| 192.168.219.104 | Storage Server (DB, RustFS) | 1 | 3.5GB | 60GB |
+| 192.168.219.105 | Development Server | 1 | 2GB | 20GB |
+| 192.168.219.106 | Production Server | 1 | 2.5GB | 25GB |
+| 192.168.219.107 | Nginx Proxy / Local Registry | 1 | 3GB | 50GB |
 
 ### 도메인 구조
 | 환경 | 도메인 | 대상 |
