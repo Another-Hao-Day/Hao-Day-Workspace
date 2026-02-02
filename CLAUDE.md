@@ -115,6 +115,26 @@ GitHub Push → GitHub Actions → Local Registry (107) → Watchtower
 | Backend 포트 변경 | Infra의 nginx.conf | upstream 설정 |
 | Infra SSL 인증서 | App의 .env | 도메인 확인 |
 
+### API Contract 파일 매핑 (자동 검증)
+
+> Claude가 API 관련 파일 수정 시 자동으로 양쪽 일관성을 검증합니다.
+> 상세: `.claude/skills/api-contract-validator.md`
+
+| Backend (Response DTO) | App (Model) |
+|------------------------|-------------|
+| `api/src/main/java/**/dto/*Response.java` | `lib/features/**/data/models/*_model.dart` |
+| `UserResponse.java` | `user_model.dart` |
+| `{Domain}Response.java` | `{domain}_model.dart` |
+
+**타입 매핑:**
+| Java | Dart |
+|------|------|
+| `Long` | `int` |
+| `String` | `String` |
+| `LocalDateTime` | `DateTime` |
+| `Enum` | `String` |
+| `List<T>` | `List<T>` |
+
 ### 환경변수 동기화
 
 | 레포 | 파일 |
