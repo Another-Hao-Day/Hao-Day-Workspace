@@ -86,7 +86,7 @@ Intel N100 (4코어), 16GB RAM, 477GB Disk, Oracle VirtualBox
 | 192.168.219.104 | Storage Server (DB, RustFS) | 1 | 3.5GB | 60GB |
 | 192.168.219.105 | Development Server | 1 | 2GB | 20GB |
 | 192.168.219.106 | Production Server | 1 | 2.5GB | 25GB |
-| 192.168.219.107 | Nginx Proxy / Local Registry | 1 | 3GB | 50GB |
+| 192.168.219.107 | Nginx Proxy / Local Registry | 1 | 3.5GB | 50GB |
 
 ### 도메인 구조
 | 환경 | 도메인 | 대상 |
